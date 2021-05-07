@@ -1,0 +1,512 @@
+
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Title</title>
+
+     <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.min.css' %}">
+     <link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}">
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+     <style type="text/css">
+     	@media screen and (min-width: 800px)
+     	{
+     		.side-btn,.closebtn{
+     			display: none;
+     		}
+
+     		.navbar{
+     			background-color: #F7F7F7
+
+     		}
+     		.Nav-Brand{
+     			margin-right: auto;
+     			margin-left: auto;
+     			padding-right: 150px;
+     		}
+
+     		#mySidenav{
+     			display: none;
+     		}
+
+     		.login-li{
+
+     			list-style: none;
+     		}
+
+     		.login-li a:hover{
+
+     			text-decoration: none;
+     		}
+
+     		 .foot-ul{
+            float: left;
+            display: inline-block;
+            list-style: none;
+         }
+
+         .foot{
+            background-color: black;
+            height: auto;
+            margin-bottom: 0px;
+         }
+
+       
+
+
+
+     		/*----------------------Drop Down Css---------------------------*/
+
+        .dropbtn {
+            background-color: inherit;
+            color: black;
+            padding-top: 6px;
+            font-size: 16px;
+            border: none;
+            margin-top: 10px;
+        }
+
+        .dropdown {
+          position: relative;
+          display: inline-block;
+        }
+
+        .dropdown-content {
+          display: none;
+          position: absolute;
+          background-color: black;
+          min-width: 100px;
+          box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+          z-index: 1;
+        }
+
+        .dropdown-content a{
+          color: black;
+          padding: 12px 16px;
+          text-decoration: none;
+          display: block;
+          color: white;
+          opacity: 0.4;
+        }
+
+
+        .dropdown-content a:hover {color: #a0a0a0;}
+
+        .dropdown:hover .dropdown-content {
+            display: block; 
+            opacity: 0.9;
+            margin-top: 2px;
+        }
+
+        .dropdown:hover .dropbtn {
+            background-color: inherit;
+        }
+
+        {% block largescreen %}
+         {% endblock largescreen %}
+     }
+
+
+     	@media screen and (max-width: 800px)
+     	{
+
+		.sidenav {
+
+		  height: 100%;
+		  width: 0;
+		  position: fixed;
+		  z-index: 1; 
+		  top: 0;
+		  left: 0;
+		  background-color: #F7F7F7;
+		  overflow-x: hidden;
+		  transition: 0.5s;
+		  padding-top: 60px;
+		  z-index: 1;
+		  
+		}
+
+		.sidenav a ,.dropdown {
+
+		  padding: 30px 8px 8px 32px;
+		  text-decoration: none;
+		  font-size: 25px;
+		  color: #818181;
+		  display: block;
+		  transition: 0.3s;
+		}
+
+		.sidenav a:hover, .dropbtn:hover {
+		  color: #000000;
+		}
+
+		.nav-ul{
+			display: none;
+		}
+
+		.navbar{
+     			background-color: #F7F7F7
+
+     		}
+
+		.sidenav .closebtn {
+		  position: absolute;
+		  top: 0;
+		  right: 25px;
+		  font-size: 36px;
+		  margin-left: 50px;
+		}
+
+
+     	.Nav-Brand{
+     		margin-right: auto;
+     		margin-left: auto;
+     		padding-left: 55px; 
+     	}
+
+     	.log{
+
+     		list-style: none;
+     	}
+
+     	.log a:hover{
+
+     			text-decoration: none;
+     	}
+
+     	.drp-nav{
+     		display: none;
+     	}
+
+     		/*----------------------Drop Down Css---------------------------*/
+
+         .side-dropbtn {
+            background-color: inherit;
+            color: #818181;
+            padding-top: 10px;
+            font-size: 20px;
+            border: none;
+            margin-top: 15px;
+            padding-left: 10px;
+        }
+
+        .side-dropdown {
+          position: relative;
+          display: inline-block;
+        }
+
+        .side-dropdown-content {
+          position: absolute;
+          background-color: inherit;
+          min-width: 100px;
+          z-index: 1;
+        }
+
+        .side-dropdown-content a{
+          color: black;
+          padding: 12px 16px;
+          margin-left: 10px;
+          text-decoration: none;
+          display: block;
+          font-size: 15px;
+        }
+
+         .foot-ul{
+            float: left;
+            display: inline-block;
+            list-style: none;
+         }
+
+         .foot{
+            background-color: black;
+            height: auto;
+            margin-bottom: 0px;
+         }
+
+         {% block smallscreen %}
+         {% endblock smallscreen %}
+      
+	    }
+
+	     {% block head %}
+
+        
+        {% endblock %}
+	</style>
+
+ </head>
+
+ <body>
+
+ 	<div class="container-fluid w-100 px-0">
+	 	<div class="navbar px-0">
+	 		<div class="side-btn ml-4">
+				<span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;</span>
+			</div>	
+
+			<!-- Side Navbar Code -->
+
+
+	         <div id="mySidenav" class="sidenav">
+			  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+
+                  <div class="container-fluid mr-0 px-0">
+				  <ul class="sidenav-ul" style="list-style: none; padding-right: 20px;">
+		                <li class="sidenav-li">
+		                    <a class="nav-link" href="/index/" style="font-size: 20px;">Home</a>
+		                </li>
+
+		                <li class="sidenav-li">
+		                    <a class="nav-link" href="/shop/" style="font-size: 20px;">Shop</a>
+		                 </li>
+		                <li class="sidenav-li">
+		                    <a class="nav-link " href="#" style="font-size: 20px;">About Us</a>
+		                </li>
+
+		                <li class="sidenav-li">
+		                    <a class="nav-link " href="#" style="font-size: 20px;">Contact Us</a>
+		                </li>
+
+		                {% if request.session.uid %}
+		                 <li class="sidenav-li ml-4 side-drp-nav">
+		          		 	
+			                <div class="side-dropdown">
+			                    <button class="side-dropbtn" data-toggle="collapse" data-target="#con">My Account</button>
+			                       <div class="side-dropdown-content" id="con">
+			                            <a href="wishlist.html">Wishlist</a>
+			                            <a href="checkout.html">Checkout </a>
+			                            <a href="#" onclick="location.href='{% url 'logout' %}'"> Logout </a>
+			                        </div>
+			                  	     
+			                </div>
+			             </li>
+		                {% endif %}
+	    		</ul>
+                </div>
+			</div>
+
+			<!-- Side Nav Bar Ends -->
+
+			<!-- Top Nav Bar Starts -->
+
+			<ul class="nav-ul pr-3 mt-2" style="list-style: none;">
+
+		                <li class="nav-li" style="float: left;">
+		                    <a class="nav-link" href="/index/" style="color: black;">Home</a>
+		                </li>
+
+		                <li class="nav-li" style="float: left;" >
+		                    <a class="nav-link" href="/shop/" style="color: black;">Shop</a>
+		                 </li>
+		                <li class="nav-li" style="float: left;">
+		                    <a class="nav-link " href="#" style="color: black;">About Us</a>
+		                </li>
+
+		                <li class="nav-li" style="float: left;">
+		                    <a class="nav-link " href="#" style="color: black;">Contact Us</a>
+		                </li>
+
+	    	</ul>
+
+			<div class="Nav-Brand"><h4>NavBar</h4></div>
+
+
+          		 {% if request.session.uid %}
+          		 	<div class="drp-nav mb-4">
+	                 	     <div class="dropdown">
+	                             <button class="dropbtn">My Account</button>
+	                                 <div class="dropdown-content">
+	                                    <a href="wishlist.html">Wishlist</a>
+	                                    <a href="checkout.html">Checkout </a>
+	                                    <a href="#" onclick="location.href='{% url 'logout' %}'"> Logout </a>
+	                         		</div>
+	                  	     </div>
+	                </div>
+	         <!-- Side Nav Bar Ends -->
+
+	                 <a class="text-dark pl-4 mb-2 mr-5 cart" href="#">Cart</a>
+	                       
+	                  {% else %}  
+	                              
+	                    <ul class="nav-end log pt-2 mt-2">
+	                        <li class="login-li"> <a class="text-dark mr-5" href="#" data-toggle="modal" data-target="#Login"> Login </a> </li>
+	                     </ul>
+
+	                 {% endif %}  
+             	  
+	 	</div>
+	</div> 	
+
+ 	<script>
+		function openNav() 
+		{
+		  document.getElementById("mySidenav").style.width = "250px";
+		}
+
+		function closeNav() 
+		{
+		  document.getElementById("mySidenav").style.width = "0";
+		}
+	</script>
+
+
+{% block body%}
+
+        
+{% endblock %}
+
+<!-- Footer -->
+
+    <div class="container-fluid foot">
+ 
+        <div class="row">
+
+            <div class="col-md-4 col-sm-10 col-11 ml-auto mr-auto">
+                <ul class="foot-ul pt-4">
+                    <li class="foot-li "><a class="text-white" href="#">Home</a></li>
+                </ul>
+
+                <ul class="foot-ul pt-4">
+                    <li class="foot-li "><a class="text-white" href="#">About</a></li>
+                </ul>
+        
+                <ul class="foot-ul pt-4">
+                    <li class="foot-li "><a class="text-white" href="#">Order Track</a></li>
+                </ul>
+
+            
+                <ul class="foot-ul pt-4">
+                    <li class="foot-li "><a class="text-white" href="#">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-3 col-sm-10 col-7 pt-4 ml-auto mr-auto">
+
+                <a class="pr-3 mr-4 ml-5" link href="#">
+                    <i class="fa fa-instagram fa-2x"></i>
+                </a>
+
+                <a class="pr-3 mr-4" link href="#">
+                    <i class="fa fa-facebook fa-2x"></i>
+                </a>
+
+                <a class="pr-3 mr-3" link href="#">
+                    <i class="fa fa-twitter fa-2x"></i>
+                </a>
+
+            </div>
+
+        </div>
+    </div>
+
+  <!-- End Footer -->
+
+
+  <!-- Pop up Sign In-->
+
+
+        <div class="modal fade" role="dialog" tabindex="-1" id="Login">
+             <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h3 class="modal-title" style="margin-left: auto;">Login</h3>
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    </div>
+
+                    <div class="modal-body">
+                        <form method="post" action="/login/">
+                        {% csrf_token %}
+                        <div class="form-group">
+                            <label>Email*</label>
+                            <input type="text" name="email" class="form-control" placeholder="Enter your email">
+                        </div>
+
+                        <div class="form-group">
+                            <label>Password*</label>
+                            <input type="password" name="passw" class="form-control" placeholder="Enter your password">
+                        </div>
+
+                          <button type="submit" class="btn btn-secondary btn-lg btn-block">Log In</button></br>
+
+                        </form>
+
+                        <div class="modal-footer pt-2">
+                            <button type="submit" class="btn btn-light btn-lg btn-block" data-dismiss="modal" data-toggle="modal" data-target= "#Signup">Create an account</button></br>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+  <!--End of  POp Up-->
+
+
+   <!-- Pop up Sign up-->
+      <div class="container">   
+        <div class="modal fade" role="dialog" tabindex="0" id="Signup">
+             <div class="modal-dialog  modal-dialog-centered">
+                <div class="modal-content" >
+                    <div class="modal-header">
+                        <h3 class="modal-title" style= "margin-left: auto;">Sign Up</h3>
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    </div>
+
+                    <div class="modal-body">
+                        <form method="post" action="/register/">
+                            {% csrf_token %}
+                            <div class="form-group">
+                                <label>Full Name*</label>
+                                <input type="text" name="fname" class="form-control" placeholder="Enter your full name">
+                                {{msg}}
+                            </div>
+                                <label>Email*</label>
+                            <div class="form-group">
+                                <input type="text" name="email" class="form-control" placeholder="Enter your email">
+                            </div>
+
+                             <div class="form-group">
+                                <label>Phone Number</label>
+                                <input type="number" name="pno" class="form-control" placeholder="Enter your mobile no.">
+                            </div>
+
+                            <div class="form-group">
+                                <label>Password*</label>
+                                <input type="password" name="passw" class="form-control" placeholder="Enter your password">
+                            </div>
+
+                            <button type="submit" class="btn btn-secondary btn-lg btn-block" data-backdrop="static">Register</button></br>
+                            
+                        </form>    
+                            <div class="modal-footer pt-2">
+                                
+                                <button type="submit" class="btn btn-light btn-lg btn-block" data-dismiss="modal" data-toggle="modal" data-target= "#Login">Log In</button>
+                            </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+      </div>    
+   <!--End of  POp Up-->
+
+
+
+	<script type="text/javascript" src="{% static 'js/jquery-3.5.1.slim.min.js' %}"> </script>
+	<script type="text/javascript" src="{% static 'js/popper.min.js' %}"> </script>
+	<script type="text/javascript" src="{% static 'js/bootstrap.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/shopit.js' %}"></script>
+
+    
+
+</body>
+</html>
+
+
+
+

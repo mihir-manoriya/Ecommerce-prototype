@@ -1,0 +1,63 @@
+.h2-pro{
+    padding-bottom: 70px;
+}
+.cat-pro{
+    padding-bottom: 80px;
+}
+
+.cat-img1{
+    height: 200px;
+    object-fit: fill;
+}
+
+.cat-img2{
+    height: 200px;
+    object-fit: fill;
+}
+
+.cat-img3{
+    height: 200px;
+    object-fit: fill;
+}
+
+
+.foot-h4{
+    text-decoration: underline solid green; 
+}
+
+.hr{
+    padding-top: 3px;
+    width: auto;
+    background-color: green;
+}
+
+.foot{
+    padding-bottom: 60px;
+}
+
+.footer{
+    background-color: lightyellow; 
+}
+
+.modal-content{
+    width: 400px;
+}
+
+.header-area{
+    border-bottom: 1px solid black;
+}
+.header-middle{
+    height: 150px;
+}
+
+.nav-area{
+    margin-left: 2;
+}
+
+.navbar-main{
+    height: 500px;
+
+}
+
+
+

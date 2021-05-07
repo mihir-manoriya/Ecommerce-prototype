@@ -1,0 +1,505 @@
+
+{% extends 'main.html' %}
+{% load static %}
+
+
+{% block head %}
+
+.pro-a{
+	
+	text-decoration: none;
+}
+
+{% endblock head %}
+
+	{% block largescreen %}
+
+	
+
+	.sm-sc{
+
+			display:none;
+		}
+         
+  .shop-cat li{
+      font-size: 20px;
+    }
+
+  .shop-cat li a{
+      text-decoration: none;
+      color: black;
+    }
+
+  .shop-cat li a:hover{
+      font-weight: bold;
+
+   }
+
+  .sub-category{
+      border : 0.1px solid #e5e5cd;
+      border-right:none;
+      border-left:none;
+      height: 200px;
+      margin-left: 130px;
+      margin-right: 100px;
+      padding-right: 15px;
+    }
+
+  .final-cat li{
+      color: black;
+      padding-top: 10px;
+      list-style: none;
+      font-size: 15px;
+      opacity: 0.5;
+}
+
+  .final-cat li a:hover{
+      color: #000000;
+}
+
+{% endblock largescreen %}
+
+{% block smallscreen %}
+
+	.lg-sc
+	{
+		display:none;
+	}
+
+	.shop-ul1 button, .shop-ul2 button, .shop-ul3 button{
+		text-align: start;
+		width:100%;
+		border: none;
+		outline:none;
+	}
+
+
+	.sm-sc ul{
+		list-style: none;
+	}
+
+	.li-shop-sc1 {
+
+		padding-top: 20px;
+	}
+
+	.li-shop-sc2,.li-shop-sc3,.li-shop-sc4 {
+
+		padding-top: 5px;
+	}
+
+	.ul-shop-sc a{
+		text-decoration: none;
+		color: #666666;
+}
+
+.ul-shop-sc a:hover{
+		text-decoration: none;
+		color: black;
+}
+
+
+{% endblock smallscreen %}
+
+
+
+{% block body %}
+
+<body>
+
+				<div class="container-fluid px-0 car-div">
+        
+		      <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" style="z-index: 0;">
+		        <ol class="carousel-indicators">
+		          <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+		          <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+		          <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+		        </ol>
+		        <div class="carousel-inner">
+		          <div class="carousel-item active">
+		            <img class="d-block w-100" src="https://images.unsplash.com/photo-1559087316-f8860a97e7ba?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80" alt="First slide" style="height: auto; object-fit: contain;">
+		          </div>
+		          <div class="carousel-item">
+		            <img class="d-block w-100" src="https://images.unsplash.com/photo-1512436991641-6745cdb1723f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80" alt="Second slide" style="height: auto; object-fit: contain;">
+		          </div>
+		          <div class="carousel-item">
+		            <img class="d-block w-100" src="https://images.unsplash.com/photo-1567401893414-76b7b1e5a7a5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80" alt="Third slide" style="height: auto; object-fit: contain;">
+		          </div>
+		        </div>
+		        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+		          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+		          <span class="sr-only">Previous</span>
+		        </a>
+		        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+		          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+		          <span class="sr-only">Next</span>
+		        </a>
+		      </div>
+    	</div>
+
+
+
+
+          <div class="container-fluid px-0">
+
+              <div class="shop-header text-center pt-5">
+                    <h3 style="margin-left: 40px;"> Shop By Category</h3>
+              </div>
+
+              <!-- Code For Large Screen -->
+              <div class="container lg-sc">
+              <div class="container w-50 pt-5 pb-2">
+                  <ul class="shop-cat d-flex justify-content-between" style="list-style: none;">
+                    <li> <a href="javascript:void();"  onclick="showDiv()"> Men </a></li>
+                    <li> <a href='javascript:void();' onclick="showDiv()"> Women </a></li>
+                    <li> <a href='javascript:void();' onclick="showDiv()"> Kids </a></li>
+                  </ul>
+              </div>  
+
+              <div class="sub-category px-0" id="sub-cat">
+                  <div class="container-fluid px-0">
+                    <ul class="shop-cat d-flex justify-content-between" style="list-style: none;">
+                      <li style="font-weight: bold;"> Men
+
+                        <ul class="final-cat">
+                          <li><a class="m-t-shirt" href="javascript:void();" onclick="showproduct('Men-tshirt')">T-shirt</a></li>
+                          <li><a class="m-jeans" href="javascript:void();" onclick="showproduct('Men-Jeans')">Jeans</a></li>
+                          <li><a class="m-shoes" href="javascript:void();" onclick="showproduct('Men-Shoes')">Shoes</a></li>
+                          <li><a class="m-shoes" href="javascript:void();" onclick="showproduct('Men-Shorts')">Boxer</a></li>
+                        </ul>
+
+                      </li>
+                      <li style="font-weight: bold;"> Women 
+                        <ul class="final-cat">
+                          <li><a class="w-t-shirt" href="javascript:void();" onclick="showproduct('Women-tshirt')">T-shirt</a></li>
+                          <li><a class="w-jeans" href="javascript:void();" onclick="showproduct('Women-Jeans')">Jeans</a></li>
+                          <li><a class="w-skirt" href="javascript:void();" onclick="showproduct('Women-Skirt')">Skirts</a></li>
+                          <li><a class="w-shoes" href="javascript:void();" onclick="showproduct('Women-Shoes')">Shoes</a></li>
+                        </ul>
+                      </li>
+                      <li  style="font-weight: bold;"> Kids 
+
+                         <ul class="final-cat">
+                           <li><a href="#">T-shirt</a></li>
+                          <li><a href="#">Jeans</a></li>
+                          <li><a href="#">Shorts</a></li>
+                          <li><a href="#">Shoes</a></li>
+                        </ul>
+
+                      </li>
+                    </ul>
+                </div>  
+                
+              </div>
+             </div>  
+
+              <!-- Large Ends Here -->
+
+              <!-- Code for Small Screen -->
+
+              	<div class="sm-sc">
+	     
+						<div class="accordion" id="accordionExample">
+								<div class="shop-ul1 py-2" style="background-color: #f3f2f2; ">
+									<h6 class="mb-0">
+									    <button class="btn1" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne"> Men </button>
+									</h6>
+								</div>
+											   
+								<div id="collapseOne" class="collapse"  data-parent="#accordionExample">
+							      <ul class="ul-shop-sc">
+							      	<li class="li-shop-sc1"><a class="m-t-shrt" href="#" onclick="showproduct('Men-tshirt')">T-shirts</li></a>
+							       <li class="li-shop-sc2"><a class="m-jean" href="javascript:void();" onclick="showproduct('Men-Jeans')">Jeans</li></a>
+							      	<li class="li-shop-sc3"><a href="#">Shoes</li></a>
+							      	<li class="li-shop-sc4"><a href="#">Boxer</li></a>
+							      </ul>				        
+								</div>
+											 
+								<div class="shop-ul2 py-2" style="background-color: #f3f2f2; ">
+								   <h6 class="mb-0">
+								    <button class="btn2" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseOne"> Women </button> 
+								   </h6>
+								</div>
+											   
+								<div id="collapseTwo" class="collapse"  data-parent="#accordionExample">
+								   <ul class="ul-shop-sc">
+								   	 <li class="li-shop-sc1"><a href="#">T-shirts</li></a>
+									 <li class="li-shop-sc2"><a href="#">Jeans</li></a>
+								   	 <li class="li-shop-sc3"><a href="#">Shoes</li></a>
+									 <li class="li-shop-sc4"><a href="#">Skirts</li></a>
+								   </ul>											        
+							    </div>
+											   
+
+							<div class="shop-ul3 py-2" style="background-color: #f3f2f2; ">
+							   <h6 class="mb-0">
+						        <button class="btn3" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseOne"> Kids </button>
+								</h6>
+						    </div> 
+						    <div id="collapseThree" class="collapse"  data-parent="#accordionExample">
+							      <ul class="ul-shop-sc">												      	
+							      	<li class="li-shop-sc1"><a href="#">T-shirts</li></a>
+							      	<li class="li-shop-sc2"><a href="#">Jeans</li></a>
+							      	<li class="li-shop-sc3"><a href="#">Shoes</li></a>
+							     	<li class="li-shop-sc4"><a href="#">Trousers</li></a>
+						           </ul>       
+							 </div>
+					</div>
+              <!-- Ends Here -->
+          </div>
+
+       
+          <div class="container" id="shop-con">
+
+          	<div class="best-deal-shop" id="best-deal-shop">
+	          	 <div class="text-center text-center font-weight-bold h2 my-4">Best Deal Products</div>
+	            	<div class="row">
+	                  {% for pro in product %}
+	                      <div class="col-md-3 col-sm-6 col-6 py-0">
+				              <div class="card mb-2 " style="height: auto;">
+				                 <img src="{{pro.imgUrl}}" class="d-block w-100" alt="..."  style=" height:250px; object-fit: cover">
+								 <div class="card-body d-flex justify-content-between" style="font-size: 13px;">
+				                   <div class="w-50">
+				                     <p class="card-text">{{pro.p_Name}}</p>
+				                    </div>
+
+				                    <div>
+				                      <p class="card-text">{{pro.price}}</p>
+				                    </div>
+				                    </div>
+				                    <div class="d-flex justify-content-between align-items-center">
+					                    <div class="btn-group mb-2 ml-3">
+					                    	<button type="button" class="btn btn-sm btn-outline-secondary">Buy</button>
+					                    </div>
+				                    </div>
+				              </div>
+                  		 </div>
+	                      {% endfor %}            
+	                 </div>
+	        </div>
+
+	        <div class="Men-tshirt" id="Men-tshirt" style="display: none;">
+	          	 <div class="text-center text-center font-weight-bold h2 my-4">Men's T-Shirt</div>
+	         <div class="row">
+                      {% for pro in M_tshirt %}
+                          <div class="col-md-3 col-sm-6 col-6 py-0">
+				              <div class="card mb-2 " style="height: auto;">
+				                 <img src="{{pro.imgUrl}}" class="d-block w-100" alt="..."  style=" height:250px; object-fit: contain;">
+								 <div class="card-body d-flex justify-content-between" style="font-size: 13px;">
+				                   <div class="w-50">
+				                     <p class="card-text">{{pro.mts_Name}}</p>
+				                    </div>
+
+				                    <div>
+				                      <p class="card-text">{{pro.mts_Price}}</p>
+				                    </div>
+				                    </div>
+				                    <div class="d-flex justify-content-between align-items-center">
+					                    <div class="btn-group mb-2 ml-3">
+					                    	<button type="button" class="btn btn-sm btn-outline-secondary">Buy</button>
+					                    </div>
+				                    </div>
+				              </div>
+                  		 </div>
+                      {% endfor %}            
+            </div>
+           </div>
+
+            <div class="Men-Jeans" id="Men-Jeans" style="display: none;">
+	          	 <div class="text-center text-center font-weight-bold h2 my-4">Men's T-Shirt</div>
+	         <div class="row">
+                      {% for pro in Men_Jeans %}
+                          <div class="col-md-3 col-sm-6 col-6 py-0">
+				              <div class="card mb-2 " style="height: auto;">
+				                 <img src="{{pro.imgUrl}}" class="d-block w-100" alt="..."  style=" height:250px; object-fit: contain;">
+								 <div class="card-body d-flex justify-content-between" style="font-size: 13px;">
+				                   <div class="w-50">
+				                     <p class="card-text">{{pro.mj_Name}}</p>
+				                    </div>
+
+				                    <div>
+				                      <p class="card-text">{{pro.mj_Price}}</p>
+				                    </div>
+				                    </div>
+				                    <div class="d-flex justify-content-between align-items-center">
+					                    <div class="btn-group mb-2 ml-3">
+					                    	<button type="button" class="btn btn-sm btn-outline-secondary">Buy</button>
+					                    </div>
+				                    </div>
+				              </div>
+                  		 </div>
+                      {% endfor %}            
+            </div>
+           </div>
+
+           <div class="Men-Shoes" id="Men-Shoes" style="display: none;">
+	          	 <div class="text-center text-center font-weight-bold h2 my-4">Men's Shoes</div>
+	         <div class="row">
+                      {% for pro in M_Shoes %}
+                          <div class="col-md-3 col-sm-6 col-6 py-0">
+				              <div class="card mb-2 " style="height: auto;">
+				                 <img src="{{pro.imgUrl}}" class="d-block w-100" alt="..."  style=" height:250px; object-fit: contain;">
+								 <div class="card-body d-flex justify-content-between" style="font-size: 13px;">
+				                   <div class="w-50">
+				                     <p class="card-text">{{pro.msh_Name}}</p>
+				                    </div>
+
+				                    <div>
+				                      <p class="card-text">{{pro.msh_Price}}</p>
+				                    </div>
+				                    </div>
+				                    <div class="d-flex justify-content-between align-items-center">
+					                    <div class="btn-group mb-2 ml-3">
+					                    	<button type="button" class="btn btn-sm btn-outline-secondary">Buy</button>
+					                    </div>
+				                    </div>
+				              </div>
+                  		 </div>
+                      {% endfor %}            
+            </div>
+           </div>
+
+           <div class="Men-Shorts" id="Men-Shorts" style="display: none;">
+	          	 <div class="text-center text-center font-weight-bold h2 my-4">Men's Shorts</div>
+	         <div class="row">
+                      {% for pro in M_Shorts %}
+                          <div class="col-md-3 col-sm-6 col-6 py-0">
+				              <div class="card mb-2 " style="height: auto;">
+				                 <img src="{{pro.imgUrl}}" class="d-block w-100" alt="..."  style=" height:250px; object-fit: contain;">
+								 <div class="card-body d-flex justify-content-between" style="font-size: 13px;">
+				                   <div class="w-50">
+				                     <p class="card-text">{{pro.ms_Name}}</p>
+				                    </div>
+
+				                    <div>
+				                      <p class="card-text">{{pro.ms_Price}}</p>
+				                    </div>
+				                    </div>
+				                    <div class="d-flex justify-content-between align-items-center">
+					                    <div class="btn-group mb-2 ml-3">
+					                    	<button type="button" class="btn btn-sm btn-outline-secondary">Buy</button>
+					                    </div>
+				                    </div>
+				              </div>
+                  		 </div>
+                      {% endfor %}            
+            </div>
+           </div>
+
+            <div class="Women-tshirt" id="Women-tshirt" style="display: none;">
+	          	 <div class="text-center text-center font-weight-bold h2 my-4">WomenT-Shirt</div>
+	         <div class="row">
+
+                      {% for pro in W_tshirt %}
+                          <div class="col-md-3 col-sm-6 col-6 py-0">
+				              <div class="card mb-2 " style="height: auto;">
+				                 <img src="{{pro.imgUrl}}" class="d-block w-100" alt="..."  style=" height:250px; object-fit: contain;">
+								 <div class="card-body d-flex justify-content-between" style="font-size: 13px;">
+				                   <div class="w-50">
+				                     <p class="card-text">{{pro.wt_Name}}</p>
+				                    </div>
+
+				                    <div>
+				                      <p class="card-text">{{pro.wt_Price}}</p>
+				                    </div>
+				                    </div>
+				                    <div class="d-flex justify-content-between align-items-center">
+					                    <div class="btn-group mb-2 ml-3">
+					                    	<button type="button" class="btn btn-sm btn-outline-secondary">Buy</button>
+					                    </div>
+				                    </div>
+				              </div>
+                  		 </div>
+                      {% endfor %}            
+            </div>
+           </div>
+
+            <div class="Women-Jeans" id="Women-Jeans" style="display: none;">
+	          	 <div class="text-center text-center font-weight-bold h2 my-4">Women Jeans</div>
+	         <div class="row">
+
+                      {% for pro in W_jeans %}
+                          <div class="col-md-3 col-sm-6 col-6 py-0">
+				              <div class="card mb-2 " style="height: auto;">
+				                 <img src="{{pro.imgUrl}}" class="d-block w-100" alt="..."  style=" height:250px; object-fit: contain;">
+								 <div class="card-body d-flex justify-content-between" style="font-size: 13px;">
+				                   <div class="w-50">
+				                     <p class="card-text">{{pro.wj_Name}}</p>
+				                    </div>
+
+				                    <div>
+				                      <p class="card-text">{{pro.wj_Price}}</p>
+				                    </div>
+				                  </div>
+				                    <div class="d-flex justify-content-between align-items-center">
+					                    <div class="btn-group mb-2 ml-3">
+					                    	<button type="button" class="btn btn-sm btn-outline-secondary">Buy</button>
+					                    </div>
+				                    </div>
+				              </div>
+                  		 </div>
+                      {% endfor %}            
+            </div>
+           </div>
+
+           <div class="Women-Skirt" id="Women-Skirt" style="display: none;">
+	          	 <div class="text-center text-center font-weight-bold h2 my-4">Women Skirt</div>
+	         <div class="row">
+
+                      {% for pro in W_skirt %}
+                          <div class="col-md-3 col-sm-6 col-6 py-0">
+				              <div class="card mb-2 " style="height: auto;">
+				                 <img src="{{pro.imgUrl}}" class="d-block w-100" alt="..."  style=" height:250px; object-fit: contain;">
+								 <div class="card-body d-flex justify-content-between" style="font-size: 13px;">
+				                   <div class="w-50">
+				                     <p class="card-text">{{pro.ws_Name}}</p>
+				                    </div>
+
+				                    <div>
+				                      <p class="card-text">{{pro.ws_Price}}</p>
+				                    </div>
+				                  </div>
+				                    <div class="d-flex justify-content-between align-items-center">
+					                    <div class="btn-group mb-2 ml-3">
+					                    	<button type="button" class="btn btn-sm btn-outline-secondary">Buy</button>
+					                    </div>
+				                    </div>
+				              </div>
+                  		 </div>
+                      {% endfor %}            
+            </div>
+           </div>
+
+           <div class="Women-Shoes" id="Women-Shoes" style="display: none;">
+	          	 <div class="text-center text-center font-weight-bold h2 my-4">Women Shoes</div>
+	         <div class="row">
+
+                      {% for pro in W_shoes %}
+                          <div class="col-md-3 col-sm-6 col-6 py-0">
+				              <div class="card mb-2 " style="height: auto;">
+				                 <img src="{{pro.imgUrl}}" class="d-block w-100" alt="..."  style=" height:250px; object-fit: contain;">
+								 <div class="card-body d-flex justify-content-between" style="font-size: 13px;">
+				                   <div class="w-50">
+				                     <p class="card-text"><a class="pro-a"href="javascript:void();">{{pro.wsh_Name}}</a></p>
+				                    </div>
+
+				                    <div>
+				                      <p class="card-text">{{pro.wsh_Price}}</p>
+				                    </div>
+				                  </div>
+				                    <div class="d-flex justify-content-between align-items-center">
+					                    <div class="btn-group mb-2 ml-3">
+					                    	<button type="button" class="btn btn-sm btn-outline-secondary">Buy</button>
+					                    </div>
+				                    </div>
+				              </div>
+                  		 </div>
+                      {% endfor %}            
+            </div>
+           </div>
+
+
+       </div>
+   
+{% endblock body %}
+
